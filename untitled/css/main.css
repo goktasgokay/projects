@@ -17,8 +17,7 @@ select,
 
 #tablo {
     position:absolute;
-    left:450px;
-    top: 25px;
+    margin-left: 20%;
 }
 
 .menu{
@@ -39,7 +38,7 @@ select,
 .menu:active {text-decoration: none;
     color: #000000;}
 
-.altcizgi{
+.altcizgi {
     color: #000000;
     border-bottom: 3px solid #000;
 }
