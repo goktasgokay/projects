@@ -2,11 +2,12 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" xmlns="http://www.w3.org/1999/html"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Home</title>
         <meta name="keywords" content="ee, studios, games, education, entertainment, innovation, developing, tools, oyun, eğitsel oyun, oyun tabanlı öğrenme, ğitim, eğlence">
         <meta name="description" content="ee studios are focusing on game-based learning, innovative educational tools, Educational Games. ">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,24 +21,22 @@
         <link href="http://vjs.zencdn.net/4.0/video-js.css" rel="stylesheet">
         <script src="http://vjs.zencdn.net/4.0/video.js"></script>
     </head>
+<noscript>
+    <body>
+    Your browser does not support JavaScript!
+    </body>
+</noscript>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p><table border="0" class="tablo">
-            <tr>
-                <td width="170" height="104"><im src="im/LOGO1.jpg"></td>
-                <left>
-                <td height="104" witdh="500"><im src="im/banner.png"></td>
-                </left>
-            </tr>
-
-            <tr>
+        <p><table class="tablo">
+              <tr>
                 <td height="70" witdh="1000" class="altcizgi">
                     <br>
-                        <table border="0" width="300" >
+                        <table width="300" >
                             <tr>
                                 <td width="100"><a href="index.html" class="menu">Home</a></td>
                                 <td width="100"><a href="about.html" class="menu">About</a></td>
@@ -47,7 +46,7 @@
 
                 <td align="right" class="altcizgi">
                     <br>
-                        <table border="0" width="90">
+                        <table width="90">
                             <tr>
                                 <td><a href="https://www.facebook.com/EEstudiosAnkara" target="_new" >
                                     <img src="img/ficon.png" onmouseover="this.src='img/ficonak.png'" onmouseout="this.src='img/ficon.png'" /></a>
@@ -66,12 +65,55 @@
 
             <tr>
                 <td colspan="2" height="700" width="1000" class="altcizgi">
-                    <video class="video-js vjs-default-skin" controls
-                           preload="auto" autoplay="" width="1000" height="580" poster="img/LOGO.jpg"
-                           data-setup="{}">
-                        <source src="vid/intro.ogv" type='video/webm'>
-                    </video>
 
+
+                    <body>
+                    <div id="divvid"></div>
+                    <video src="vid/intro.ogv" height="580" width="1000" controls="" autoplay ></video>
+                    </body>
+                    <script>
+                        function GetVideoFormat() {
+                            isogg = false;
+                            ish264 = false;
+                            iswebm = false;
+                            var elem = document.createElement('video');
+                            try {
+                                if (  !!elem.canPlayType ) {
+
+                                    isogg  = elem.canPlayType('video/ogg; codecs="theora"')      .replace(/^no$/,'');
+
+                                    // Without QuickTime, this value will be `undefined`. github.com/Modernizr/Modernizr/issues/546
+                                    ish264 = elem.canPlayType('video/mp4; codecs="avc1.42E01E"') .replace(/^no$/,'');
+
+                                    iswebm = elem.canPlayType('video/webm; codecs="vp8, vorbis"').replace(/^no$/,'');
+                                }
+                                if (ish264) {
+                                    return 'MP4';
+                                } else if (iswebm) {
+                                    return 'WEBM';
+                                } else if (isogg) {
+                                    return 'OGG';
+                                }
+                            } catch(e) {
+                                return 'SWF';
+                            }
+                        }
+                        switch (GetVideoFormat) {
+                            case 'MP4':
+                                S =  '<source src="vid/intro.mp4" type="video/mp4" codecs="avc1.42E01E, mp4a.40.2"'/>';
+                                break;
+                            case 'WEBM':
+                                S =  '<source src="vid/intro.webm" type="video/webm" codecs="avc1.42E01E, mp4a.40.2"'/>';
+                                break;
+                            default:
+                                S = '<embed src="vid/intro.swf" LOOP=FALSE height="580" width="1000"/>';
+                        }
+                        S = '<video poster="img/LOGO.jpg" height="580" width="1000" controls="" autoplay >'+S+'</video>';
+                        document.getElementById('divvid').innerHTML(S);
+                    </script>
+
+
+                   <!-- <video src="vid/intro.ogv" height="580" width="1000" controls="" autoplay ></video> -->
                 </td>
             </tr>
             <tr>
