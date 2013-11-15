@@ -7,7 +7,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
-        <meta name="description" content="">
+        <meta name="keywords" content="ee, studios, games, education, entertainment, innovation, developing, tools, oyun, eğitsel oyun, oyun tabanlı öğrenme, ğitim, eğlence">
+        <meta name="description" content="ee studios are focusing on game-based learning, innovative educational tools, Educational Games. ">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -15,6 +16,9 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="css_browser_selector.js" type="text/javascript"></script>
+        <link href="http://vjs.zencdn.net/4.0/video-js.css" rel="stylesheet">
+        <script src="http://vjs.zencdn.net/4.0/video.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -22,7 +26,7 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p><table border="1" class="tablo">
+        <p><table border="0" class="tablo">
             <tr>
                 <td width="170" height="104"><im src="im/LOGO1.jpg"></td>
                 <left>
@@ -33,7 +37,7 @@
             <tr>
                 <td height="70" witdh="1000" class="altcizgi">
                     <br>
-                        <table border="1" width="300" >
+                        <table border="0" width="300" >
                             <tr>
                                 <td width="100"><a href="index.html" class="menu">Home</a></td>
                                 <td width="100"><a href="about.html" class="menu">About</a></td>
@@ -43,13 +47,16 @@
 
                 <td align="right" class="altcizgi">
                     <br>
-                        <table border="0" width="60">
+                        <table border="0" width="90">
                             <tr>
                                 <td><a href="https://www.facebook.com/EEstudiosAnkara" target="_new" >
                                     <img src="img/ficon.png" onmouseover="this.src='img/ficonak.png'" onmouseout="this.src='img/ficon.png'" /></a>
                                 </td>
                                 <td><a href="https://twitter.com/EduEntStudios" target="_new">
                                     <img src="img/ticon.png" onmouseover="this.src='img/ticonak.png'" onmouseout="this.src='img/ticon.png'" /></a>
+                                </td>
+                                <td><a href="#">
+                                    <img src="img/licon.png" onmouseover="this.src='img/liconak.png'" onmouseout="this.src='img/licon.png'" /></a>
                                 </td>
                             </tr>
                         </table>
@@ -59,7 +66,12 @@
 
             <tr>
                 <td colspan="2" height="700" width="1000" class="altcizgi">
-                    <embed src="vid/intro.webm" width="1000" height="580" autostart=true></embed>
+                    <video class="video-js vjs-default-skin" controls
+                           preload="auto" autoplay="" width="1000" height="580" poster="img/LOGO.jpg"
+                           data-setup="{}">
+                        <source src="vid/intro.ogv" type='video/webm'>
+                    </video>
+
                 </td>
             </tr>
             <tr>

@@ -15,10 +15,20 @@ button,
 input,
 select,
 
-#tablo {
+.tablo {
     position:absolute;
-    margin-left: 20%;
+    left: 10%;
 }
+
+.ie .tablo{
+    left: 10%;
+}
+.ff2 .tablo{
+    left: 10%;}
+.ff3 .tablo{
+    left: 10%;}
+.ff3_5 .tablo{
+    left: 10%;}
 
 .menu{
    font-size:20px;
@@ -41,6 +51,11 @@ select,
 .altcizgi {
     color: #000000;
     border-bottom: 3px solid #000;
+}
+.siyah{
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 19px;
+    color: #000000;
 }
 .sosyalag{
     margin-left: 5px;
@@ -340,3 +355,5 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+
